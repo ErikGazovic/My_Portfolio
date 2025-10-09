@@ -1,0 +1,282 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Michroma&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Orbitron", sans-serif;
+  --font-secondary: "Michroma", sans-serif;
+  --font-reading: "Inter", sans-serif;
+
+  --color-main: rgb(0, 173, 181);
+
+  --inset-shadow-circle: "inset 0 0px 6px 0.02px hsla(183,100%,83%,1)";
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background-color: #4a505b;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+input,
+textarea,
+select,
+button {
+  font-family: inherit !important;
+}
+
+h1 {
+  transition-duration: 0.4s;
+  color: rgb(79, 206, 213);
+}
+
+.glow-h1 {
+  color: #a8fbff;
+}
+
+main > svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-180deg); /* <- this doesnt work */
+  width: 600px; /* SVG container width */
+  height: 600px; /* SVG container height */
+  z-index: -1;
+}
+
+circle {
+  fill: none;
+  stroke: #222831;
+  stroke-width: 40;
+  stroke-linecap: square;
+  stroke-dasharray: 1760;
+  stroke-dashoffset: 1760;
+  animation: draw 2s linear forwards;
+}
+
+.glow {
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 595px;
+  height: 595px;
+  border: 40px solid transparent;
+  border-radius: 50%;
+  box-shadow: 0 0 30px 10px hsla(183, 100%, 83%, 1),
+    inset 0 0 20px 5px hsla(183, 100%, 83%, 1);
+  transition-duration: 0.4s;
+  z-index: -1; /* behind SVG */
+}
+
+.show-glow {
+  opacity: 1;
+}
+
+@media (max-width: 750px) {
+  .glow {
+    width: 505px;
+    height: 505px;
+    border: 35px solid transparent;
+    box-shadow: 0 0 20px 7px hsla(183, 100%, 83%, 1),
+      inset 0 0 20px 7px hsla(183, 100%, 83%, 1);
+  }
+
+  main > svg {
+    width: 500px;
+    height: 500px;
+  }
+}
+
+@media (max-width: 600px) {
+  .glow {
+    width: 355px;
+    height: 355px;
+    border: 20px solid transparent;
+  }
+
+  main > svg {
+    width: 350px;
+    height: 350px;
+  }
+
+  circle {
+    stroke-width: 40;
+  }
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0; /* reveal full circle */
+  }
+}
+
+.project::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0;
+  background-color: #a8fbff;
+  transition-duration: 500ms;
+}
+
+.project::before {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  right: 0;
+  height: 3px;
+  width: 0;
+  z-index: 1;
+  background-color: #a8fbff;
+  transition-duration: 500ms;
+}
+
+.project:hover::after {
+  width: 100%;
+}
+
+.project:hover::before {
+  width: 100%;
+}
+
+.project:hover div {
+  height: 100%;
+}
+
+.box {
+  animation: glow 1200ms ease-out infinite alternate;
+  border-radius: 6px;
+  background: #4a505b6d;
+  background: linear-gradient(#e4eaf51e, #fdffff25);
+  border-color: rgb(79, 206, 213);
+  box-shadow: 0 0 5px rgba(73, 201, 208, 0.604),
+    inset 0 0 5px rgba(63, 163, 169, 0.374), 0 2px 0 #000;
+  transition: background 0.5s ease-in-out;
+}
+
+.box::before,
+.box::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  transition: opacity 400ms ease; /* animate opacity */
+  z-index: 0;
+}
+
+.box:hover::before {
+  background: linear-gradient(#e4eaf51e, #fdffff25); /* default */
+  opacity: 1;
+}
+.box:hover::after {
+  background: linear-gradient(#e4f1f534, #fdffff46); /* hovered look */
+  opacity: 0;
+}
+
+@keyframes glow {
+  0% {
+    border-color: rgb(111, 226, 232);
+    box-shadow: 0 0 8px rgba(90, 234, 241, 0.825),
+      inset 0 0 8px rgba(83, 217, 224, 0.374), 0 2px 0 #000;
+  }
+  100% {
+    border-color: #a8fbff;
+    box-shadow: 0 0 20px rgb(75, 231, 240), inset 0 0 10px rgb(103, 221, 227),
+      0 2px 0 #000;
+  }
+}
+
+.slowFade {
+  animation: slowfadeOut 4s ease-out;
+}
+
+@keyframes slowfadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  25% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+  }
+}
