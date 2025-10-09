@@ -1,8 +1,5 @@
 import { useEffect, useState } from "react";
 import FadeInSection from "./FadeInComponent";
-import { Resend } from "resend";
-import { p, pre } from "framer-motion/client";
-const resend = new Resend("re_Z2tU1mSM_VA9e7gknB98ga5LRMtjEwkXZ");
 
 export default function Contact() {
   const [contactData, setContactData] = useState({
@@ -38,7 +35,7 @@ export default function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const res = await fetch("http://localhost:5000/send-email", {
+    const res = await fetch("https://my-portfolio-2-3tw8.onrender.com/send-email", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(contactData),

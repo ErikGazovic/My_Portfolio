@@ -10,8 +10,11 @@ const resend = new Resend(process.env.RESEND_API);
 const PORT = 5000;
 
 const app = express();
-
-app.use(cors());
+app.use(
+  cors({
+    origin: "*",
+  })
+);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
