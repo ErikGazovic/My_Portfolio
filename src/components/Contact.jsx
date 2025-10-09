@@ -63,7 +63,7 @@ export default function Contact() {
       <section className="bg-[#EEEEEE] w-5/6 md:w-11/12 lg:w-5/6 mx-auto shadow-[0_0_20px_1px_black] px-6 mt-10 gap-14 md:gap-6 flex md:flex-row flex-col justify-center md:justify-around items-center h-[560px] md:h-[430px] lg:h-[70vh] relative">
         {response && (
           <p
-            className={`absolute bottom-4 mx-auto font-secondary ${
+            className={`absolute bottom-4 mx-auto left-1/2 text-[0.9rem] text-center px-8 z-10 w-full -translate-1/2 bg-[#EEEEEE] font-secondary ${
               response?.success ? "text-green-700" : "text-red-700"
             } ${animate ? "slowFade" : ""}`}
           >
@@ -104,7 +104,7 @@ export default function Contact() {
                     id="first-name"
                     autoComplete="off"
                     required
-                    className="outline-0 bg-transparent h-6  sm:h-8 px-2 border-[1px] border-[#a8fbff] text-[#EEEEEE] focus:border-[2px] focus:bg-[#4a505b] "
+                    className="outline-0 bg-transparent h-6 text-[0.6rem]  sm:h-8 px-2 border-[1px] border-[#a8fbff] text-[#EEEEEE] focus:border-[2px] focus:bg-[#4a505b] "
                   />
                 </div>
 
