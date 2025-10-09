@@ -8,7 +8,7 @@ export default function ProjectComponents({
   projectLanguage
 }) {
   let pos = position === "right" ? "justify-self-start" : "justify-self-end";
-  let fadeDir = position === "right" ? "left-right" : "right-left";
+  let fadeDir = position === "right" ? "no-dir" : "no-dir";
   let borderPos = position !== "right" ? " left-0 bottom-0 " :  ' right-0 top-0 ';
   return (
     <FadeInSection where={fadeDir}>

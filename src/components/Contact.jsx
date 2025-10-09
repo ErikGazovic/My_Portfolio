@@ -60,7 +60,7 @@ export default function Contact() {
       <h2 className="font-display text-[#a8fbff] text-5xl md:text-6xl px-4 lg:text-8xl text-center tracking-[15px]">
         Contact Me
       </h2>
-      <section className="bg-[#EEEEEE] w-5/6 md:w-11/12 lg:w-5/6 mx-auto shadow-[0_0_20px_1px_black] px-6 mt-10 gap-14 md:gap-6 flex md:flex-row flex-col justify-center md:justify-around items-center h-[70vh] md:h-[60vh] lg:h-[70vh] relative">
+      <section className="bg-[#EEEEEE] w-5/6 md:w-11/12 lg:w-5/6 mx-auto shadow-[0_0_20px_1px_black] px-6 mt-10 gap-14 md:gap-6 flex md:flex-row flex-col justify-center md:justify-around items-center h-[560px] md:h-[430px] lg:h-[70vh] relative">
         {response && (
           <p
             className={`absolute bottom-4 mx-auto font-secondary ${

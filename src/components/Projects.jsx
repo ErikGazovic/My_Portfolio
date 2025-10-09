@@ -9,7 +9,7 @@ export default function Projects() {
   return (
     <section id="projects">
       <Introduction forWhat={undefined}/>
-      <div className="bg-[#222831] border-2 border-[#a8fbff] absolute -mt-10 left-1/2 rounded-[30px] -translate-x-1/2 -z-1 w-5/6 h-[60vh] sm:h-[97vh] md:h-[125vh] lg:h-[125vh] xl:h-[1100px]">
+      <div className="bg-[#222831] border-2 border-[#a8fbff] absolute -mt-10 left-1/2 rounded-[30px] -translate-x-1/2 -z-1 w-5/6 h-[530px] sm:h-[840px] md:h-[125vh] lg:h-[125vh] xl:h-[1100px]">
 
       </div>
       <ProjectComponents position={"right"} projectName={"Book Store"} projectImg={BookStore} projectUrl={"http://gazovic-webapps.s3-website.eu-north-1.amazonaws.com"} projectDescription={`Simple library for managing books`} projectLanguage={"React.js, Tailwind"}/>
