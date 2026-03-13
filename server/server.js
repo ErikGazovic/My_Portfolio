@@ -12,7 +12,7 @@ const PORT = 5000;
 const app = express();
 app.use(
   cors({
-    origin: "*",
+    origin: "http://portfolio-gazovic.s3-website.eu-north-1.amazonaws.com",
   })
 );
 app.use(bodyParser.json());
